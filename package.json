@@ -1,10 +1,65 @@
 {
   "name": "create-typescript-app",
   "version": "0.0.1",
+  "description": "A boilerplate for creating typescript app.",
   "bin": {
     "create-typescript-app": "./bin/index.js"
   },
+  "main": "./lib/cjs/index.js",
+  "types": "./lib/cjs/types/index.d.ts",
+  "scripts": {
+    "test:dev": "ts-node src/index.ts",
+    "clean": "node -e \"require('./cmd').clean()\"",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p ./configs/tsconfig.esm.json && node -e \"require('./cmd').move()\"",
+    "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
+    "prepack": "npm run build"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/USSDlover/create-typescript-app.git"
+  },
+  "keywords": [
+    "create-typescript-app",
+    "create typescript app",
+    "npx",
+    "typescript",
+    "create",
+    "app"
+  ],
+  "author": "Alireza Razinejad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/USSDlover/create-typescript-app/issues"
+  },
+  "homepage": "https://github.com/USSDlover/create-typescript-app#readme",
+  "files": [
+    "lib/**/*"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./lib/esm/index.mjs",
+        "types": "./lib/esm/types/index.d.ts"
+      },
+      "require": {
+        "default": "./lib/cjs/index.js",
+        "types": "./lib/cjs/types/index.d.ts"
+      }
+    }
+  },
   "devDependencies": {
-    "@types/node": "^18.8.3"
-  }
+    "@types/node": "^18.8.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {}
 }
