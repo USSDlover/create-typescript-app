@@ -1,3 +1,10 @@
+[0.0.8]
+
+- Add `cleanUp` step
+- Add `replaceFiles` step
+- Make more logs
+
+
 [0.0.5]
 
 - Fix the repository address in the script for cloning
