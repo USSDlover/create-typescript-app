@@ -1,3 +1,8 @@
+[0.0.10]
+
+- Fix typo in `cleanUp` for removing `LICENSE`.
+
+
 [0.0.9]
 
 - Fix `cleanUp` to remove `.git` folder.

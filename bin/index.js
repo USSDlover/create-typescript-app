@@ -18,7 +18,7 @@ const exit = code => process.exit(code);
 
 const cleanUp = () => {
     rm(appFolder + '/CHANGELOG.md', () => {});
-    rm(appFolder + '/LICENCE', () => {});
+    rm(appFolder + '/LICENSE', () => {});
     rm(appFolder + '/yarn.lock', () => {});
     rm(appFolder + '/.git', {recursive: true}, () => {});
     rm(binFolder, {recursive: true}, () => console.log('Clean up is done...'));
