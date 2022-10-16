@@ -4,6 +4,7 @@ const {execSync} = require('child_process');
 
 const runCommand = command => {
     try {
+        console.log('Running Command: ', command);
         execSync(`${command}`, {sdio: 'inherit'})
     } catch (e) {
         console.error(`Failed to execute ${command}`, e);
@@ -14,11 +15,12 @@ const runCommand = command => {
 
 const exit = code => process.exit(code);
 
+const template = process.argv[3] || 'default';
 const repoName = process.argv[2];
-const gitCloneCommand = `git clone --depth 1 https://github.com/USSDloveer/create-typescript-app ${repoName}`;
+const gitCloneCommand = `git clone --depth 1 https://github.com/USSDloveer/create-typescript-app -b ${template} ${repoName}`;
 const installDepsCommand = `cd ${repoName} && npm install`;
 
-console.log(`create typescript app with name ${repoName}`);
+console.log(`Start creating TypeScript APP with name: "${repoName}"`);
 const cloned = runCommand(gitCloneCommand);
 if (!cloned) exit(-1);
 

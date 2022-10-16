@@ -1,9 +1,9 @@
 {
-  "name": "create-typescript-app",
-  "version": "0.0.1",
+  "name": "raz-create-typescript-app",
+  "version": "0.0.4",
   "description": "A boilerplate for creating typescript app.",
   "bin": {
-    "create-typescript-app": "./bin/index.js"
+    "raz-create-typescript-app": "./bin/index.js"
   },
   "main": "./lib/cjs/index.js",
   "types": "./lib/cjs/types/index.d.ts",
