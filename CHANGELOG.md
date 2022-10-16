@@ -1,3 +1,8 @@
+[0.0.9]
+
+- Fix `cleanUp` to remove `.git` folder.
+
+
 [0.0.8]
 
 - Add `cleanUp` step

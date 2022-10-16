@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const {execSync} = require('child_process');
-const {rm, rmdir, rename} = require('fs');
+const {rm, rename} = require('fs');
 
 const runCommand = command => {
     try {
@@ -20,7 +20,8 @@ const cleanUp = () => {
     rm(appFolder + '/CHANGELOG.md', () => {});
     rm(appFolder + '/LICENCE', () => {});
     rm(appFolder + '/yarn.lock', () => {});
-    rmdir(binFolder, {recursive: true}, () => console.log('Clean up is done...'));
+    rm(appFolder + '/.git', {recursive: true}, () => {});
+    rm(binFolder, {recursive: true}, () => console.log('Clean up is done...'));
 }
 const replaceFiles = () => {
     rename(binFolder + '/replacements/package.json', appFolder + '/package.json', () => '[package.json] Replacement is done...')
