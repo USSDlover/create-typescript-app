@@ -1,6 +1,6 @@
 {
   "name": "raz-create-typescript-app",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "A boilerplate for creating typescript app.",
   "bin": {
     "raz-create-typescript-app": "./bin/index.js"
