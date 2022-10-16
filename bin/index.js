@@ -17,7 +17,7 @@ const exit = code => process.exit(code);
 
 const template = process.argv[3] || 'default';
 const repoName = process.argv[2];
-const gitCloneCommand = `git clone --depth 1 https://github.com/USSDloveer/create-typescript-app -b ${template} ${repoName}`;
+const gitCloneCommand = `git clone --depth 1 https://github.com/USSDlover/create-typescript-app.git -b ${template} ${repoName}`;
 const installDepsCommand = `cd ${repoName} && npm install`;
 
 console.log(`Start creating TypeScript APP with name: "${repoName}"`);

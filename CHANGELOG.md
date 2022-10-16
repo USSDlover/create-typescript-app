@@ -1,3 +1,8 @@
+[0.0.5]
+
+- Fix the repository address in the script for cloning
+
+
 [0.0.4]
 
 - Renamed the tool/package name to fix duplication.
